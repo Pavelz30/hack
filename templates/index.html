@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка IP-адреса</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Что необходимо проверить?</h1>
+        <p>Примечание: вы можете ввести одиночный IP-адрес, диапазон IP-адресов, CIDR.</p>
+        <p>Пример правильного ввода:</p>
+        <p>Для обычного IP: X.X.X.X, где X - число от 1 до 255</p>
+        <p>Для CIDR IP: X.X.X.X/M, где M - число от 1 до 32</p>
+        <p>Для диапазонного формата: X-Y.X-Y.X-Y.X-Y, где X и Y - число от 1 до 255. X всегда меньше Y</p>
+        <div id="form-container">
+            <div class="ip-form-group">
+                <div class="select-input-container">
+                    <select class="ip-type" onchange="toggleInput(this)">
+                        <option value="single">IP в формате X.X.X.X</option>
+                        <option value="cidr">IP в CIDR нотации</option>
+                        <option value="range">IP в формате диапазона</option>
+                    </select>
+                </div>
+                <div class="input-container">
+                    <input type="text" class="ip-input single" placeholder="Введите IP в формате X.X.X.X" oninput="validateIP(this)">
+                    <input type="text" class="ip-input cidr" placeholder="Введите IP в CIDR нотации" style="display: none;" oninput="validateCIDR(this)">
+                    <input type="text" class="ip-input range" placeholder="Введите IP в формате диапазона" style="display: none;" oninput="validateRange(this)">
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button type="button" onclick="submitIP()" class="submit-button">Поиск уязвимостей</button>
+            <button type="button" class="add-button" onclick="addForm()">+</button>
+            <button type="button" class="remove-button" onclick="removeForm()" style="display: none;">-</button>
+        </div>
+        <div id="error-message" style="display: none; color: red; margin-top: 1em;">Проверьте корректность ввода</div>
+        <div id="banner" style="display: none; color: red; margin-top: 1em;">
+            <div>Нет смысла создавать еще одно поле ввода</div>
+            <div>Формата ввода всего три</div>
+        </div>
+        <div class="description">
+            <p>Этот сервис умеет находить доменное имя удаленного ресурса. Умеет находить открытые порты и используемые протоколы прикладного и транспортного уровня модели OSI. Умеет находить ПО развернутое на портах. Умеет сканировать найденные сервисы и их версии на портах. Умеет анализировать какие потенциальные уязвимости могут быть в системе.</p>
+            <p>Нажимаете на кнопку -> Запускается сканирование -> После окончания сканирования у вас появляется возможность нажать на кнопку скачивания -> Скачиваете и получаете подробный отчет со всей информацией и красивыми графиками.</p>
+        </div>
+    </div>
+    <script src="../static/script.js"></script>
+</body>
+</html>

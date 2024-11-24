@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+}
+
+h1 {
+    margin-bottom: 1em;
+}
+
+p {
+    margin: 0.5em 0;
+    text-align: left; /* Прижимаем текст к левой стороне */
+}
+
+.ip-form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.select-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+
+select, input[type="text"] {
+    padding: 0.5em;
+    width: 80%;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Добавлено для корректного отображения ширины */
+}
+
+.add-button, .remove-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em;
+    cursor: pointer;
+    margin-left: 0.5em;
+}
+
+.add-button:hover {
+    background-color: #0056b3;
+}
+
+.remove-button {
+    background-color: #dc3545;
+}
+
+.remove-button:hover {
+    background-color: #c82333;
+}
+
+.input-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container div {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.submit-button {
+    padding: 0.7em 2em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    margin-top: 0.5em; /* Добавляем отступ сверху для сообщения об ошибке */
+}
